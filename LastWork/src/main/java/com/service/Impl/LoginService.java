@@ -28,7 +28,6 @@ public class LoginService implements ILoginService{
 
 	@Override
 	public boolean register(Integer user_id, String name, String pwd) {
-		System.out.println("qweqweqwe");
 		boolean flag = userDao.insertByAll(user_id, name , pwd);
 		return flag;
 	}

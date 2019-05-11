@@ -17,11 +17,11 @@ public class UserDao implements IUserDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	private Session getSession(){
-		
+	private Session getSession(){		
 		Session session=null;
 		try {
-			 session=sessionFactory.getCurrentSession();
+			 session = sessionFactory.getCurrentSession();
+			 System.out.println("获取到线程");
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,7 +46,7 @@ public class UserDao implements IUserDao{
 		user.setUser_pwd(pwd);
 		user.setUser_role(1);
 		try {
-			System.out.println(getSession().save(user));
+			System.out.println( this.getSession().save(user) );
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
