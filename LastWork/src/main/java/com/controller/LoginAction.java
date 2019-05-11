@@ -8,8 +8,25 @@ import com.service.ILoginService;
 @Controller
 public class LoginAction extends BaseAction{
 
-	
 	private Integer userid;
+	private String pwd;
+	
+	@Autowired
+	private ILoginService iLoginService;
+	
+	public String login() {
+		System.out.println("controller");
+		boolean flag = iLoginService.login(userid, pwd);
+		if(flag==true) {
+			session.put("userid",userid);
+			return "ok";
+		}else {
+			return "login";
+		}
+	}
+	
+	
+
 	public Integer getUserid() {
 		return userid;
 	}
@@ -26,21 +43,6 @@ public class LoginAction extends BaseAction{
 		this.pwd = pwd;
 	}
 
-	private String pwd;
-	
-	
-	@Autowired
-	private ILoginService iLoginService;
-	
-	public String login() {
-		System.out.println("controller");
-		boolean flag = iLoginService.login(userid, pwd);
-		if(flag==true) {
-			session.put("userid",userid);
-			return "ok";
-		}else {
-			return "login";
-		}
-	}
+
 	
 }

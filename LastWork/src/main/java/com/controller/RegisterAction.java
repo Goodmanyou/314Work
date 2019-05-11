@@ -12,6 +12,29 @@ public class RegisterAction extends BaseAction{
 	private String regist_password;
 	private String final_password;
 	
+
+
+
+	@Autowired
+	private ILoginService iLoginService;
+	
+	public String register() {
+		System.out.println(regist_user_id+" "+regist_password+" "+final_password);
+		if(regist_password.equals(final_password)) {
+			System.out.println("hahahahah");
+			boolean flag = iLoginService.register(regist_user_id, regist_user_name, regist_password);
+			if(flag==true) {
+				session.put("userid",regist_user_id);
+				session.put("userpwd",regist_password);
+				return "ok";
+			}else {
+				return "register";
+			}
+		}
+		return "register";
+	}
+	
+	
 	
 	public Integer getRegist_user_id() {
 		return regist_user_id;
@@ -51,26 +74,5 @@ public class RegisterAction extends BaseAction{
 	public void setFinal_password(String final_password) {
 		this.final_password = final_password;
 	}
-
-
-	@Autowired
-	private ILoginService iLoginService;
-	
-	public String register() {
-		System.out.println(regist_user_id+" "+regist_password+" "+final_password);
-		if(regist_password.equals(final_password)) {
-			System.out.println("hahahahah");
-			boolean flag = iLoginService.register(regist_user_id, regist_user_name, regist_password);
-			if(flag==true) {
-				session.put("userid",regist_user_id);
-				session.put("userpwd",regist_password);
-				return "ok";
-			}else {
-				return "register";
-			}
-		}
-		return "register";
-	}
-	
 
 }

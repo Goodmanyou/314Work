@@ -10,7 +10,7 @@ import com.model.User;
 import com.service.ILoginService;
 
 @Service
-public class LoginServiceImpl implements ILoginService{
+public class LoginService implements ILoginService{
 
 	
 	@Autowired
