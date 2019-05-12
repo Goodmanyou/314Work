@@ -25,5 +25,14 @@
 		
     </package>
     
+	<package name="assetInfo" namespace="/assetInfo" extends="struts-default">
+		
+		<action name="assetCard" class="com.controller.AssetInfoAction" method="getAssetInfo">
+			<result name="over">/login.jsp</result>
+			<result name="register">/login.jsp</result>
+		</action>
+		
+    </package>
+    
 
 </struts>

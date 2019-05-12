@@ -21,5 +21,25 @@
             <column name="User_role" />
         </property>
         
+        <property name="user_date" type="java.lang.String">
+            <column name="User_date" />
+        </property>
+        
+        <property name="user_e_mail" type="java.lang.String">
+            <column name="User_e_mail" />
+        </property>
+        
+        <property name="user_phone" type="java.lang.String">
+            <column name="User_phone" />
+        </property>
+        
+        <property name="user_loc" type="java.lang.String">
+            <column name="User_loc" />
+        </property>
+        
+        <property name="user_sex" type="java.lang.String">
+            <column name="User_sex" />
+        </property>
+        
     </class>
 </hibernate-mapping>

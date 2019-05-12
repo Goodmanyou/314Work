@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.model.Borrow" table="Borrow">
+    
+        <id name="borrow_id" type="java.lang.Integer">
+            <column name="Borrow_id" />
+            <generator class="native" />
+        </id>
+        
+        <property name="equ_cat" type="java.lang.String">
+            <column name="Equ_cat" />
+        </property>
+        
+        <property name="equ_name" type="java.lang.String">
+            <column name="Equ_name" />
+        </property>
+        
+        <property name="equ_num" type="java.lang.Integer">
+            <column name="Equ_num" />
+        </property>
+        
+        <property name="business_cat" type="java.lang.String">
+            <column name="Business_cat" />
+        </property>
+        
+        <property name="business_pro" type="java.lang.String">
+            <column name="Business_pro" />
+        </property>
+        
+        <property name="user_name" type="java.lang.String">
+            <column name="User_name" />
+        </property>
+         
+         <property name="borrow_date" type="java.lang.String">
+            <column name="Borrow_date" />
+        </property>
+
+    </class>
+</hibernate-mapping>

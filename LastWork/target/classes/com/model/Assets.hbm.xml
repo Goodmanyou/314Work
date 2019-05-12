@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.model.Assets" table="Assets">
+    
+        <id name="assets_id" type="java.lang.Integer">
+            <column name="Assets_id" />
+        </id>
+        
+        <property name="equ_name" type="java.lang.String">
+            <column name="Equ_name" />
+        </property>
+        
+        <property name="financial_code" type="java.lang.String">
+            <column name="Financial_code" />
+        </property>
+        
+        <property name="asset_code" type="java.lang.String">
+            <column name="Asset_code" />
+        </property>
+        
+        <property name="in_date" type="java.lang.String">
+            <column name="In_date" />
+        </property>
+        
+        <property name="unit" type="java.lang.String">
+            <column name="Unit" />
+        </property>
+        
+        <property name="equ_price" type="java.lang.Double">
+            <column name="Equ_price" />
+        </property>
+         
+         <property name="total_price" type="java.lang.String">
+            <column name="Total_price" />
+        </property>
+
+    </class>
+</hibernate-mapping>
