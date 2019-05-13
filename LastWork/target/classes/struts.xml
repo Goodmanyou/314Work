@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-	"http://struts.apache.org/dtds/struts-2.3.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
 
@@ -25,5 +25,46 @@
 		
     </package>
     
-
+	<package name="findidles" namespace="/findidles" extends="struts-default">
+		<action name="findidle" class="com.controller.BorrowAndTurnAction" method="getIdleslist">
+			<result name="sucess">/idle.jsp</result>
+			<result name="fail">/index.jsp</result>
+		</action>
+		
+		<action name="findidles" class="com.controller.BorrowAndTurnAction" method="findIdleslistbycatorname">
+			<result name="sucess">/idle.jsp</result>	
+		</action>
+		
+		<action name="idlenum" class="com.controller.BorrowAndTurnAction" method="findidlenum">
+			<result name="success">/borrow.jsp</result>
+		</action>
+	</package>
+	
+	<package name="borrow" namespace="/borrow" extends="struts-default">
+		<action name="insertandupdate" class="com.controller.BorrowAndTurnAction" method="UpdateAndBorrow">
+			<result name="success" type="chain">
+				<param name="actionName">findidle</param>
+				<param name="namespace">/findidles</param>
+				<param name="method">getIdleslist</param>
+			</result>
+		</action>
+		
+		<action name="findborrowlist" class="com.controller.BorrowAndTurnAction" method="findborrowlist">
+			<result name="success">/turnmessage.jsp</result>
+		</action>
+		
+		<action name="turnback" class="com.controller.BorrowAndTurnAction" method="turnback">
+			<result name="success" type="chain">findborrowlist</result>
+		</action>
+	</package> 
+	
+	<!-- 
+	<package name="" namespace="" extends="struts-default">
+		<action name=""	class="com.controller.BorrowAndTurnAction" method="">
+			<result name=""></result>
+		</action>
+	</package> 
+	-->
+	
+	
 </struts>

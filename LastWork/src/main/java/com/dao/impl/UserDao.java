@@ -28,7 +28,7 @@ public class UserDao implements IUserDao{
 		return session;
 	}
 	
-	
+
 	@Override
 	public List<User> findByIdAndPwd(Integer userid, String pwd) {
 		String hql = "FROM User";
@@ -39,7 +39,6 @@ public class UserDao implements IUserDao{
 
 	@Override
 	public boolean insertByAll(Integer user_id, String name, String pwd) {
-		System.out.println("zxczxczxc");
 		User user = new User();
 		user.setUser_id(user_id);
 		user.setUser_name(name);

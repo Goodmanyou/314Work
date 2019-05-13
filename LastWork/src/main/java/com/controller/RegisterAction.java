@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.service.ILoginService;
+@SuppressWarnings("serial")
 @Controller
 public class RegisterAction extends BaseAction{
 	

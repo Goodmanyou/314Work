@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.model.EquipList" table="Equiplist">
+    
+        <id name="elist_id" type="java.lang.Integer">
+            <column name="Equ_id" />
+            <generator class="native" />
+        </id>
+        
+        <property name="elsit_order" type="java.lang.String">
+            <column name="Elsit_order" />
+        </property>
+        
+        <property name="elist_equ_name" type="java.lang.String">
+            <column name="Elist_equ_name" />
+        </property>
+        
+        <property name="elist_equ_num" type="java.lang.Integer">
+            <column name="Elist_equ_num" />
+        </property>
+        
+        <property name="elist_price" type="java.lang.Double">
+            <column name="Elist_price" />
+        </property>
+        
+        <property name="elist_equ_sup" type="java.lang.String">
+            <column name="Elist_equ_sup" />
+        </property>
+        
+        <property name="elist_remarks" type="java.lang.String">
+            <column name="Elist_remarks" />
+        </property>
+         
+
+    </class>
+</hibernate-mapping>
